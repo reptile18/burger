@@ -7,3 +7,7 @@ INSERT INTO burgers VALUES
 (NULL,"Improbable",TRUE);
 
 SELECT * FROM burgers;
+
+INSERT INTO burgers VALUES (1,"Best", FALSE);
+
+DELETE FROM burgers WHERE id = 9;

@@ -1,0 +1,35 @@
+<h1>Eat-Da-Burger!</h1>
+<img src="/assets/img/burger.jpg" alt="vegan burger">
+<div class="container">
+  <div class="row">
+    <!-- Undevoured -->
+    <div class="col-6">
+      {{#each burgers}}
+        {{#unless devoured}}
+          {{> burgers/burger-block}}
+        {{/unless}}
+      {{/each}}
+    </div>
+    <!-- Devoured -->
+    <div class="col-6">
+      <ul>
+        {{#each burgers}}
+          {{#if devoured}}
+            <li>
+              {{id}}. {{burger_name}}
+            </li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <form id="create-burger">
+        <label for="burgerName">Enter name of new burger: </label><br>
+        <textarea id="burgerName" name="burger_name"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
