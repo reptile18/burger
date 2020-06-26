@@ -1,0 +1,20 @@
+body {
+  --black: #1f1f1f;
+  --white: #dddddd;
+  background-image: radial-gradient(white,green);
+}
+
+.imgBurger {
+  height: 20em;
+  width: 20em;
+  border-radius: 5em;
+  border: 10px dashed var(--black);
+}
+
+ul {
+  background-color: var(--white);
+}
+
+textarea {
+  background-color: var(--white);
+}

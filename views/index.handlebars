@@ -1,21 +1,26 @@
-<h1>Eat-Da-Burger!</h1>
-<img src="/assets/img/burger.jpg" alt="vegan burger">
+<h1 class="text-center">Eat-Da-Burger!</h1>
+<div class="text-center">
+  <img class="imgBurger img-fluid mb-3" src="/assets/img/burger.jpg" alt="vegan burger">
+</div>
+
 <div class="container">
   <div class="row">
     <!-- Undevoured -->
     <div class="col-6">
-      {{#each burgers}}
-        {{#unless devoured}}
-          {{> burgers/burger-block}}
-        {{/unless}}
-      {{/each}}
+      <ul class="list-group">
+        {{#each burgers}}
+          {{#unless devoured}}
+            {{> burgers/burger-block}}
+          {{/unless}}
+        {{/each}}
+      </ul>
     </div>
     <!-- Devoured -->
     <div class="col-6">
-      <ul>
+      <ul class="list-group">
         {{#each burgers}}
           {{#if devoured}}
-            <li>
+            <li class="list-group-item disabled">
               {{id}}. {{burger_name}}
             </li>
           {{/if}}
@@ -26,9 +31,11 @@
   <div class="row">
     <div class="col-12">
       <form id="create-burger">
-        <label for="burgerName">Enter name of new burger: </label><br>
-        <textarea id="burgerName" name="burger_name"></textarea>
-        <button type="submit">Submit</button>
+        <div class="form-group">
+          <label for="burgerName">Enter name of new burger: </label><br>
+          <textarea class="form-control" id="burgerName" name="burger_name"></textarea>
+        </div>
+        <button class="btn btn-light float-right" type="submit">Submit</button>
       </form>
     </div>
   </div>
